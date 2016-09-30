@@ -1,0 +1,95 @@
+extend includes/_layout
+block title
+	title Index
+block content
+	//begin screen
+	.screen
+		video.screen__video(src='video/video.mp4' autoplay loop)
+		.screen__inner
+			.screen__title Welcome to the world of prevention
+	//end screen
+
+	//begin about
+	.about
+		.container
+			h3.h3 About Bio-Link
+			.divider
+				.divider__line
+			.about__subtitle Bio-Link is a company specialized in providing preventive dental and oral treatments, while at the same time broadening the knowledge of prevention to patients and practitioners through specialized courses and seminars.
+			.text-center
+				.about__btn
+					.about__btn-icon.icon-play
+					.about__btn-text WATCH THE VIDEO
+	//end about
+
+	//begin lives
+	.lives
+		.container
+			h2.h2 Will our children live longer lives?
+			.lives__subtitle From medical progress to environmental and way of live deterioration, doctors, scientists, researchers and other health professionals, will share with us important knowledge about the dangers that threaten our health, as well as their view on a preventive medical approach.
+			.text-center
+				button.btn(type='button') More details
+	//end lives
+
+	//begin doctor
+	.doctor
+		.container
+			h2.doctor__h2.h2 Dr. Bruno Gauthier
+			.divider
+				.divider__line
+			.doctor__item
+				.doctor__image
+					img.doctor__img(src='img/content/doctor.png' alt='image')
+				ul.doctor__list.list
+					li.list__item
+						p.list__text Doctor Gauthier left Geneva in 2002 to practice in an exclusive medical clinic in Moscow, Russia.  In 2006 he opened his own dental clinic, Clinic Alliance Française (www.alliance-denta.ru), followed soon after with a full-fledged advanced professional medical center (www.alliance-f.ru).
+					li.list__item
+						p.list__text In Russia he faced challenging clinical situations where a surgical and prosthodontic approach were often needed.
+					li.list__item
+						p.list__text Specialized in complex treatments, Dr. Gauthier recalled the most powerful force in the dental profession:  a preventive approach to oral care.  With his new approach to dentistry—linking oral health to overall bodily health—he returns to his founding doctoral research from the beginning of his career.
+					li.list__item
+						p.list__text In 2012 Dr. Gauthier started on advanced diagnostic and preventative treatments.  Excited by the impressive results of his detoxification protocols, he decided to approach and partner with other medical practioners who shared his approach to overall oral-bodily health and the strong links between them.  His research and the widespread acknowledgement of the effectiveness of his approach to treatment brought him back to Switzerland, the home of preventative medicine.
+					li.list__item
+						p.list__text In 2016 Dr. Gauthier created Biolink, a company specialized in providing preventative dental and oral treatments, while at the same time broadening the knowledge of prevention to patients through specialized courses and seminars.
+	//end doctor
+
+	//begin method
+	.method
+		.container
+			h2.method__h2.h2 Bio-Link Method for preventive dentistry
+			.method__subtitle Three Steps to Health, which we make together!
+			.method__row
+				.method__circle
+					.method__number 1
+					.method__text Advanced <br>diagnostics
+				.method__circle
+					.method__number 2
+					.method__text Treatments
+				.method__circle
+					.method__number 3
+					.method__text Coaching
+			.text-center
+				button.btn(type='button') MORE DETAILS
+	//end method
+
+	//begin thing
+	.thing
+		.container
+			h3.h3 And one more thing…
+			.divider
+				.divider__line
+			p.thing__text Nowadays, to keep informed is to everyone.
+			p.thing__text Internet…. an inexhaustible source of information but also, unfortunately, misinformation.
+			p.thing__text Indeed, all that we can read is not always a reflection of the truth and it is often difficult to separate things given the number of people who call themselves "experts".
+			.thing__question So how to assess a question?
+			p.thing__text All scientific studies do not have the same value ... Find out more a classification of methods to provide scientific evidence.
+			.text-center
+				button.thing__btn.btn(type='button') Read more
+	//end thing
+
+	//begin olga
+	.olga
+		.container
+			.olga__green «Doubt! This is the first thing I want to tell you. Better to focus on information quality over quantity.»
+			.olga__black Dr. Bruno Gauthier
+	//end olga

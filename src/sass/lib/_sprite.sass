@@ -1,0 +1,70 @@
+$icons: (0:0)
+$icons: map-merge($icons,(arrows-green: (X: -113px, Y:-46px, W: 28px, H: 42px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(arrows-white: (X: -113px, Y:0px, W: 63px, H: 42px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(mail: (X: -145px, Y:-46px, W: 20px, H: 15px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(play: (X: 0px, Y:0px, W: 109px, H: 109px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2
+@mixin sprite-position-retina($iconName)
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)
+@mixin spr($i)
+	+sprite-position-retina($i)
+
+.icon-arrows-green
+	width: 28px
+	height: 42px
+	background-image: url('../img/icons.png')
+	background-position: -113px -46px
+	background-size: 176px 109px
+.icon-arrows-white
+	width: 63px
+	height: 42px
+	background-image: url('../img/icons.png')
+	background-position: -113px 0px
+	background-size: 176px 109px
+.icon-mail
+	width: 20px
+	height: 15px
+	background-image: url('../img/icons.png')
+	background-position: -145px -46px
+	background-size: 176px 109px
+.icon-play
+	width: 109px
+	height: 109px
+	background-image: url('../img/icons.png')
+	background-position: 0px 0px
+	background-size: 176px 109px
