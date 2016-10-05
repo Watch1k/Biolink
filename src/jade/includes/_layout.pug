@@ -18,7 +18,8 @@ html
     <!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   body
     .wrapper
-      include _header
+      block header
+        include _header
       main.main
         block content
     include _footer

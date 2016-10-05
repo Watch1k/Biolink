@@ -1,8 +1,24 @@
 $icons: (0:0)
-$icons: map-merge($icons,(arrows-green: (X: -113px, Y:-46px, W: 28px, H: 42px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(arrows-white: (X: -113px, Y:0px, W: 63px, H: 42px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(mail: (X: -145px, Y:-46px, W: 20px, H: 15px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(play: (X: 0px, Y:0px, W: 109px, H: 109px, TW: 176px, TH: 109px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(approach-1: (X: -327px, Y:0px, W: 94px, H: 104px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(approach-2: (X: -235px, Y:0px, W: 88px, H: 116px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(approach-3: (X: 0px, Y:-298px, W: 54px, H: 111px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(arrow-bot-green: (X: -235px, Y:-166px, W: 16px, H: 22px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(arrow-right-green: (X: -138px, Y:-113px, W: 63px, H: 42px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(arrows-green: (X: -144px, Y:-244px, W: 28px, H: 42px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(arrows-white: (X: -235px, Y:-120px, W: 63px, H: 42px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(cancel: (X: -255px, Y:-166px, W: 16px, H: 16px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(close-popup: (X: -103px, Y:-193px, W: 47px, H: 47px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(email: (X: -203px, Y:-193px, W: 46px, H: 36px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(geo-white: (X: -302px, Y:-120px, W: 18px, H: 23px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(geo: (X: -103px, Y:-244px, W: 37px, H: 45px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(mail: (X: -302px, Y:-147px, W: 20px, H: 15px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(phone: (X: -154px, Y:-193px, W: 45px, H: 44px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(play: (X: 0px, Y:0px, W: 109px, H: 109px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(reason-1: (X: -327px, Y:-108px, W: 91px, H: 83px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(reason-2: (X: 0px, Y:-193px, W: 99px, H: 101px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(reason-3: (X: 0px, Y:-113px, W: 134px, H: 76px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(reason-4: (X: -327px, Y:-195px, W: 77px, H: 87px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(reason-5: (X: -113px, Y:0px, W: 118px, H: 94px, TW: 421px, TH: 409px, IMG: '../img/icons.png')))
 
 
 // Gets an attribute from the sass map
@@ -44,27 +60,123 @@ $icons: map-merge($icons,(play: (X: 0px, Y:0px, W: 109px, H: 109px, TW: 176px, T
 @mixin spr($i)
 	+sprite-position-retina($i)
 
+.icon-approach-1
+	width: 94px
+	height: 104px
+	background-image: url('../img/icons.png')
+	background-position: -327px 0px
+	background-size: 421px 409px
+.icon-approach-2
+	width: 88px
+	height: 116px
+	background-image: url('../img/icons.png')
+	background-position: -235px 0px
+	background-size: 421px 409px
+.icon-approach-3
+	width: 54px
+	height: 111px
+	background-image: url('../img/icons.png')
+	background-position: 0px -298px
+	background-size: 421px 409px
+.icon-arrow-bot-green
+	width: 16px
+	height: 22px
+	background-image: url('../img/icons.png')
+	background-position: -235px -166px
+	background-size: 421px 409px
+.icon-arrow-right-green
+	width: 63px
+	height: 42px
+	background-image: url('../img/icons.png')
+	background-position: -138px -113px
+	background-size: 421px 409px
 .icon-arrows-green
 	width: 28px
 	height: 42px
 	background-image: url('../img/icons.png')
-	background-position: -113px -46px
-	background-size: 176px 109px
+	background-position: -144px -244px
+	background-size: 421px 409px
 .icon-arrows-white
 	width: 63px
 	height: 42px
 	background-image: url('../img/icons.png')
-	background-position: -113px 0px
-	background-size: 176px 109px
+	background-position: -235px -120px
+	background-size: 421px 409px
+.icon-cancel
+	width: 16px
+	height: 16px
+	background-image: url('../img/icons.png')
+	background-position: -255px -166px
+	background-size: 421px 409px
+.icon-close-popup
+	width: 47px
+	height: 47px
+	background-image: url('../img/icons.png')
+	background-position: -103px -193px
+	background-size: 421px 409px
+.icon-email
+	width: 46px
+	height: 36px
+	background-image: url('../img/icons.png')
+	background-position: -203px -193px
+	background-size: 421px 409px
+.icon-geo-white
+	width: 18px
+	height: 23px
+	background-image: url('../img/icons.png')
+	background-position: -302px -120px
+	background-size: 421px 409px
+.icon-geo
+	width: 37px
+	height: 45px
+	background-image: url('../img/icons.png')
+	background-position: -103px -244px
+	background-size: 421px 409px
 .icon-mail
 	width: 20px
 	height: 15px
 	background-image: url('../img/icons.png')
-	background-position: -145px -46px
-	background-size: 176px 109px
+	background-position: -302px -147px
+	background-size: 421px 409px
+.icon-phone
+	width: 45px
+	height: 44px
+	background-image: url('../img/icons.png')
+	background-position: -154px -193px
+	background-size: 421px 409px
 .icon-play
 	width: 109px
 	height: 109px
 	background-image: url('../img/icons.png')
 	background-position: 0px 0px
-	background-size: 176px 109px
+	background-size: 421px 409px
+.icon-reason-1
+	width: 91px
+	height: 83px
+	background-image: url('../img/icons.png')
+	background-position: -327px -108px
+	background-size: 421px 409px
+.icon-reason-2
+	width: 99px
+	height: 101px
+	background-image: url('../img/icons.png')
+	background-position: 0px -193px
+	background-size: 421px 409px
+.icon-reason-3
+	width: 134px
+	height: 76px
+	background-image: url('../img/icons.png')
+	background-position: 0px -113px
+	background-size: 421px 409px
+.icon-reason-4
+	width: 77px
+	height: 87px
+	background-image: url('../img/icons.png')
+	background-position: -327px -195px
+	background-size: 421px 409px
+.icon-reason-5
+	width: 118px
+	height: 94px
+	background-image: url('../img/icons.png')
+	background-position: -113px 0px
+	background-size: 421px 409px

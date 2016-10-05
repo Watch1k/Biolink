@@ -1,0 +1,268 @@
+extend includes/_layout
+block title
+	title Contact
+block header
+	include includes/_header_in
+block content
+	//begin clinics
+	.clinics
+		.container
+			h3.clinics__h3.h3.wow.fadeInUp(data-wow-offset='150') Our clinics
+			.divider.wow.fadeInUp(data-wow-offset='150')
+				.divider__line
+			.clinics__text.wow.fadeInUp(data-wow-offset='150') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+	//end clinics
+
+	//begin loc
+	.loc
+		.container
+			.loc__table
+				.loc__col
+					.loc__city.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='0.5s')
+						.loc__city-text Geneva
+					.loc__user.user.wow.fadeInLeft
+						.user__image
+							img.user__img(src='img/content/user-1.jpg' alt='image')
+						.user__name Dr. Bruno Gauthier
+						.user__desc The head of the company / <br>Highly professional doctor
+				.loc__col
+					.loc__row.wow.fadeInRight
+						.loc__icon.icon.icon-phone
+						.loc__phone 8-800-222-35-55 <br>8-800-525-24-52
+					.loc__row.wow.fadeInRight( data-wow-delay='0.5s')
+						.loc__icon.icon.icon-email
+						a.loc__email(href='mailto:info@biolink.com') info@biolink.com
+					.loc__row.wow.fadeInRight( data-wow-delay='1s')
+						.loc__icon.icon.icon-geo
+						.loc__geo 8082 Rosewood Drive <br>South El Monte, CA 91733 <br>8082 Rosewood Drive
+				.loc__col.wow.zoomIn(data-wow-delay='0.5s')
+					.loc__map#map
+	//end loc
+
+	//begin loc2
+	.loc2
+		.container
+			.loc2__table
+				.loc2__col
+					.loc2__city.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='0.5s')
+						.loc2__city-text
+							|	Moscow
+							.loc2__city-text-light Opening 2017
+					.loc2__user.user.wow.fadeInLeft(data-wow-offset='150')
+						.user__image
+							img.user__img(src='img/content/user.png' alt='image')
+						.user__name Dr. Doctor
+						.user__desc Highly professional dentist
+				.loc2__col
+					.loc2__text.wow.fadeIn(data-wow-offset='150') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo
+					.loc2__info
+						.loc2__row.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='0.5s')
+							.loc2__icon.icon.icon-phone
+							.loc2__phone 8-800-222-35-55 <br>8-800-525-24-52
+						.loc2__row.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='1s')
+							.loc2__icon.icon.icon-email
+							a.loc2__email(href='mailto:info@biolink.com') info@biolink.com
+						.loc2__row.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='1.5s')
+							.loc2__icon.icon.icon-geo
+							.loc2__geo 8082 Rosewood Drive <br>South El Monte, CA 91733 <br>8082 Rosewood Drive
+					.text-center
+						button.loc2__btn.js-init-map.wow.flipInX(data-wow-offset='150' type='button')
+							.loc2__btn-icon.icon.icon-geo-white
+							|	Show on the map
+						.loc2__map.js-popup
+							.loc2__map-in
+								.loc2__map-close.icon.icon-cancel.js-popup-close
+								.loc2__map-title Moscow Medical Center
+								.loc2__map-content
+									.loc2__maps#map2
+								.loc2__map-footer
+									button.loc2__map-cancel.js-popup-close(type='button') Close
+	//end loc2
+
+	//begin loc2
+	.loc2
+		//.loc2__map#map3
+		.container
+			.loc2__table
+				.loc2__col
+					.loc2__city.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='0.5s')
+						.loc2__city-text
+							|	Moscow
+							.loc2__city-text-light Opening 2017
+					.loc2__user.user.wow.fadeInLeft(data-wow-offset='150')
+						.user__image
+							img.user__img(src='img/content/user.png' alt='image')
+						.user__name Dr. Doctor
+						.user__desc Highly professional dentist
+				.loc2__col
+					.loc2__text.wow.fadeIn(data-wow-offset='150') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo
+					.loc2__info
+						.loc2__row.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='0.5s')
+							.loc2__icon.icon.icon-phone
+							.loc2__phone 8-800-222-35-55 <br>8-800-525-24-52
+						.loc2__row.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='1s')
+							.loc2__icon.icon.icon-email
+							a.loc2__email(href='mailto:info@biolink.com') info@biolink.com
+						.loc2__row.wow.fadeInLeft(data-wow-offset='150' data-wow-delay='1.5s')
+							.loc2__icon.icon.icon-geo
+							.loc2__geo 8082 Rosewood Drive <br>South El Monte, CA 91733 <br>8082 Rosewood Drive
+					.text-center
+						button.loc2__btn.js-init-map.wow.flipInX(data-wow-offset='150' type='button')
+							.loc2__btn-icon.icon.icon-geo-white
+							|  Show on the map
+						.loc2__map.js-popup
+							.loc2__map-in
+								.loc2__map-close.icon.icon-cancel.js-popup-close
+								.loc2__map-title Moscow Medical Center
+								.loc2__map-content
+									.loc2__maps#map3
+								.loc2__map-footer
+									button.loc2__map-cancel.js-popup-close(type='button') Close
+	//end loc2
+		
+	//begin training
+	.training
+		.container
+			h3.training__h3.h3.wow.fadeInUp(data-wow-offset='150') Bio-Link training
+			.divider.wow.fadeInUp(data-wow-offset='150' data-wow-delay='0.5s')
+				.divider__line
+			.training__subtitle.wow.fadeInUp(data-wow-offset='150' data-wow-delay='1s') The following Doctors have completed a full Bio-Link training program in preventive dentistry.
+			.cards.wow.fadeIn(data-wow-offset='150' data-wow-delay='0.5s')
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+				.cards__card.card
+					.card__image
+						img.card__img(src='img/content/users.png' alt='image')
+					.card__content
+						.card__name Dr. Doctor
+						.card__info WIEN
+						.card__spec Highly professional dentist
+						a.card__btn(href='#') WEBSITE
+	//end training
+
+block js
+	script.
+		function initMap() {
+			var myLatLng = {lat: 34.0627069, lng: -118.3539114};
+			var mapProp = {
+				center: myLatLng,
+				zoom: 12,
+				scrollwheel: false,
+				disableDefaultUI: true,
+				draggable: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("map"), mapProp);
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				title: 'BioLink',
+				icon: 'img/marker.png'
+			});
+
+			var myLatLng2 = {lat: 34.0627069, lng: -118.3539114};
+			var mapProp2 = {
+				center: myLatLng2,
+				zoom: 12,
+				scrollwheel: false,
+				disableDefaultUI: true,
+				draggable: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map2 = new google.maps.Map(document.getElementById("map2"), mapProp2);
+			var marker2 = new google.maps.Marker({
+				position: myLatLng2,
+				map: map2,
+				title: 'BioLink',
+				icon: 'img/marker.png'
+			});
+
+			var myLatLng3 = {lat: 34.0627069, lng: -118.3539114};
+			var mapProp3 = {
+				center: myLatLng3,
+				zoom: 12,
+				scrollwheel: false,
+				disableDefaultUI: true,
+				draggable: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map3 = new google.maps.Map(document.getElementById("map3"), mapProp3);
+			var marker3 = new google.maps.Marker({
+				position: myLatLng3,
+				map: map3,
+				title: 'BioLink',
+				icon: 'img/marker.png'
+			});
+		}
+	script(src="https://maps.googleapis.com/maps/api/js?callback=initMap")
+	script(src="js/app.js")

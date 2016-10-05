@@ -5,7 +5,7 @@ $default-fonts: Arial, sans-serif
 
 =olga
 	font-family: 'OlgaCTT', $default-fonts
-
+	
 // colors
 // $black: #000
 
@@ -23,6 +23,8 @@ body
 	color: #000
 	font-weight: 400
 	line-height: 1.42857
+	&.is-active
+		overflow: hidden
 
 .wrapper
 	overflow: hidden
@@ -118,6 +120,8 @@ img
 		font-size: 50px
 	+r(719)
 		font-size: 35px
+	+r(419)
+		font-size: 30px
 
 .h3
 	font-size: 35px
@@ -125,6 +129,10 @@ img
 	font-weight: 700
 	text-align: center
 	text-transform: uppercase
+	+r(1023)
+		font-size: 30px
+	+r(479)
+		font-size: 24px
 	
 .btn
 	padding: 12px 10px 15px
@@ -146,7 +154,7 @@ img
 	 =================================== */
 .logo
 	display: block
-	width: 214px
+	width: 140px
 	
 .header
 	position: absolute
@@ -154,15 +162,34 @@ img
 	left: 0
 	right: 0
 	z-index: 10
+	&_in
+		position: relative
+		height: 160px
+		background: #fff url('../img/bg/header-bg.png') 0 0 repeat-x
+		box-shadow: 1px 3px 32px rgba(0, 0, 0, 0.1)
 	&__logo
 		float: left
-		margin-top: 25px
+		margin-top: 20px
 		&-img
 			width: 100%
 		+r(1023)
-			width: 140px
-		+r(719)
-			width: 100px
+			margin-top: 25px
+		+r(479)
+	&_in &__logo
+		margin-top: 0
+		width: 180px
+		height: 160px
+		background-color: #ffffff
+		font-size: 0
+		+vertical
+		+r(479)
+			width: auto
+			padding-left: 20px
+			padding-right: 20px
+	&_in &__logo-img
+		display: inline-block
+		vertical-align: middle
+		width: 107px
 	&__section
 		float: right
 		text-align: right
@@ -173,17 +200,33 @@ img
 		margin-top: 50px
 		+r(1279)
 			display: none
-			margin-top: 60px
-		&.is-active
-			display: block
+			margin: 0!important
+			display: flex
+			visibility: hidden
+			opacity: 0
+			pointer-events: none
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			position: fixed
+			z-index: 11
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(0,0,0,.8)
+			transition: all 0.5s
+	&_in &__nav
+		margin-top: 32px
 		
 .hamburger
+	position: relative
+	z-index: 12
 	float: right
 	pointer-events: auto
 	-webkit-tap-highlight-color: transparent
 	display: none
 	margin: 30px 0 0 0
-	z-index: 10
 	cursor: pointer
 	transition-property: opacity, -webkit-filter
 	transition-property: opacity, filter
@@ -237,11 +280,11 @@ img
 			top: -7px
 		&::after
 			bottom: -7px
-	&.is-white &__inner
-		background-color: #222
-	&.is-white &__inner:before,
-	&.is-white &__inner:after
-		background-color: #222
+	&.is-active &__inner
+		background-color: #fff
+	&.is-active &__inner:before,
+	&.is-active &__inner:after
+		background-color: #fff
 	&_spin &__inner
 		transition-duration: 0.3s
 		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
@@ -271,6 +314,10 @@ img
 .nav
 	font-size: 0
 	+pie-clearfix
+	&.is-active
+		opacity: 1
+		visibility: visible
+		pointer-events: auto
 	&__link
 		position: relative
 		display: inline-block
@@ -293,13 +340,14 @@ img
 		&:hover,
 		&.is-active
 			color: #93c83d
-			font-weight: 700
 			&:before
 				width: 100%
 	&.is-active &__link
 		display: block
-		margin-top: 10px
-		margin-right: 0
+		flex: 0 auto
+		margin: 25px 0 0 0
+		color: #ffffff
+		font-size: 20px
 	&_footer
 		+r(1023)
 			display: none
@@ -338,6 +386,7 @@ img
 		float: left
 		margin-top: 35px
 		margin-bottom: 35px
+		width: 214px
 		&-img
 			width: 100%
 		+r(1023)
@@ -464,13 +513,51 @@ img
 		color: #93c83d
 		font-weight: 700
 		text-transform: uppercase
+		+r(1023)
+			font-size: 40px
+		+r(767)
+			font-size: 30px
 		
+.about-parallax
+	min-height: 740px
+	background-color: transparent
+
 .about
+	margin-top: -740px
 	padding-top: 40px
 	padding-bottom: 40px
 	min-height: 740px
-	background: #fff url('../img/bg/about-bg.jpg') center center no-repeat
-	background-size: cover
+	background: transparent url('../img/bg/about-bg.png') 100% 60% no-repeat
+	background-size: 90% auto
+	+r(639)
+		background: transparent url('../img/bg/about-bg.png') 100% 62% no-repeat
+		background-size: 90% auto
+	&__popup
+		overflow: auto
+		display: none
+		position: fixed
+		z-index: 99
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0, 0, 0, .7)
+		&-in
+			width: 1280px
+			max-width: 75%
+			max-height: 80%
+			box-shadow: 0 10px 30px rgba(0,0,0,.5)
+			+vcenter
+		&-close
+			cursor: pointer
+			position: absolute
+			top: -60px
+			right: -60px
+			+r(767)
+				right: 0
+		&-video
+			width: 100%
+			display: block
 	&__subtitle
 		margin-right: auto
 		margin-left: auto
@@ -478,6 +565,8 @@ img
 		text-align: center
 		text-transform: uppercase
 	&__btn
+		cursor: pointer
+		display: inline-block
 		margin-top: 180px
 		+r(479)
 			margin-top: 120px
@@ -515,7 +604,7 @@ img
 		margin: 0 60px
 		padding: 40px 160px
 		background: url('../img/bg/doctor-bg.png') center top no-repeat
-		+r(1023)
+		+r(1439)
 			margin: 0 -20px
 		+r(767)
 			padding: 40px
@@ -574,8 +663,12 @@ img
 		vertical-align: top
 		&:first-child
 			margin-left: 0
+			+r(1023)
+				margin-left: auto
 		&:last-child
 			margin-right: 0
+			+r(1023)
+				margin-right: auto
 		& + &
 			&:before
 				content: ''
@@ -664,8 +757,938 @@ img
 		margin-top: 20px
 		color: grey
 	
+.clinics
+	padding-top: 40px
+	padding-bottom: 40px
+	&__text
+		margin-left: auto
+		margin-right: auto
+		max-width: 1250px
+		font-size: 16px
+		color: #000000
+		text-align: center
 	
+.loc
+	padding-top: 80px
+	padding-bottom: 80px
+	background-color: #f7f7f7
+	+pie-clearfix
+	+r(639)
+		padding-top: 20px
+		padding-bottom: 20px
+	&__table
+		display: table
+		width: 100%
+		table-layout: fixed
+		+r(1439)
+			display: block
+			+pie-clearfix
+	&__col
+		position: relative
+		display: table-cell
+		padding-left: 40px
+		+pie-clearfix
+		&:nth-child(1)
+			width: 440px
+			+r(1439)
+				float: left
+				padding-left: 0
+				width: 50%
+			+r(1023)
+				display: table
+				float: none
+				width: auto
+				margin-left: auto
+				margin-right: auto
+		&:nth-child(2)
+			width: 75%
+			+r(1439)
+				float: left
+				padding-left: 0
+				width: 50%
+			+r(1023)
+				display: table
+				float: none
+				width: auto
+				margin-left: auto
+				margin-right: auto
+		&:last-child
+			padding-right: 40px
+			width: 100%
+			+r(1439)
+				margin-top: 40px
+				float: left
+				padding-left: 0
+				padding-right: 0
+	&__city
+		position: relative
+		float: left
+		margin-top: 54px
+		width: 160px
+		height: 160px
+		font-size: 23px
+		color: #ffffff
+		font-weight: 700
+		line-height: 160px
+		text-transform: uppercase
+		text-align: center
+		background-color: #93c83d
+		border-radius: 50%
+		+r(639)
+			float: none
+			margin-left: auto
+			margin-right: auto
+			margin-top: 0
+	&__user
+		float: left
+		margin-left: -45px
+		+r(639)
+			float: none
+			margin-left: 0
+			margin-top: 20px
+	&__row
+		margin-top: 20px
+		+pie-clearfix
+		+r(1023)
+			padding-left: 100px
+		+r(639)
+			padding-left: 0
+		& + &
+			margin-top: 70px
+			+r(1023)
+				margin-top: 30px
+	&__icon
+		float: left
+		margin-right: 30px
+	&__phone
+		float: left
+		font-size: 24px
+		color: #000000
+	&__email
+		float: left
+		margin-top: -20px
+		margin-bottom: -10px
+		font-size: 20px
+		color: #010101
+		font-weight: 400
+		line-height: 3.95
+	&__geo
+		float: left
+		font-size: 20px
+		color: #000000
+		font-weight: 400
+		line-height: 1.35
+		text-align: left
+		+r(719)
+			font-size: 16px
+	&__map
+		width: 100%
+		height: 350px
+		
+.loc2
+	padding-top: 80px
+	padding-bottom: 80px
+	+pie-clearfix
+	+r(639)
+		padding-top: 20px
+		padding-bottom: 20px
+	&__table
+		display: table
+		width: 100%
+		table-layout: fixed
+		+r(719)
+			display: block
+	&__col
+		display: table-cell
+		padding-left: 40px
+		+pie-clearfix
+		+r(1023)
+			padding-left: 0
+			+r(719)
+				float: none
+				display: table
+				margin-left: auto
+				margin-right: auto
+		&:nth-child(1)
+			width: 440px
+			+r(1023)
+				width: 300px
+				padding-right: 30px
+			+r(719)
+				width: 270px
+				padding-right: 0
+		&:nth-child(2)
+			padding-right: 40px
+			+r(1023)
+				display: block
+				padding-right: 0
+			+r(719)
+				margin-top: 20px
+	&__city
+		position: relative
+		float: left
+		margin-top: 54px
+		width: 160px
+		height: 160px
+		color: #ffffff
+		font-weight: 700
+		text-transform: uppercase
+		text-align: center
+		background-color: #93c83d
+		border-radius: 50%
+		+vertical
+		+r(1023)
+			margin-top: 0
+			float: none
+			margin-left: auto
+			margin-right: auto
+		&-text
+			display: inline-block
+			vertical-align: middle
+			font-size: 23px
+			&-light
+				font-size: 18px
+				font-weight: 400
+	&__user
+		float: left
+		margin-left: -45px
+		+r(1023)
+			float: none
+			margin-left: auto
+			margin-right: auto
+			margin-top: 20px
+	&__info
+		display: table
+		table-layout: fixed
+		width: 100%
+		+r(1439)
+			display: block
+		+r(719)
+			display: table
+			margin-left: auto
+			margin-right: auto
+			width: auto
+	&__row
+		display: table-cell
+		white-space: nowrap
+		vertical-align: middle
+		+pie-clearfix
+		+r(1439)
+			display: block
+	&__icon
+		display: inline-block
+		vertical-align: middle
+		margin-right: 30px
+	&__phone
+		display: inline-block
+		vertical-align: middle
+		font-size: 24px
+		color: #000000
+	&__email
+		display: inline-block
+		vertical-align: middle
+		font-size: 20px
+		color: #010101
+		font-weight: 400
+		line-height: 3.95
+	&__geo
+		display: inline-block
+		vertical-align: middle
+		font-size: 20px
+		color: #000000
+		font-weight: 400
+		line-height: 1.35
+		+r(719)
+			font-size: 16px
+	&__text
+		margin-top: 54px
+		margin-bottom: 40px
+		color: #000000
+		+r(1023)
+			margin-top: 0
+	&__btn
+		margin-top: 55px
+		display: inline-block
+		height: 40px
+		padding-top: 11px
+		padding-bottom: 14px
+		font-size: 18px
+		color: #ffffff
+		font-weight: 400
+		text-transform: uppercase
+		line-height: 15px
+		background-color: #93c83d
+		width: 274px
+		+trs
+		&-icon
+			position: relative
+			top: -3px
+			margin-right: 10px
+		&:hover
+			background-color: darken(#93c83d, 10)
+	&__map
+		display: none
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 20
+		background-color: rgba(0,0,0,.2)
+		&-in
+			overflow: auto
+			width: 720px
+			max-width: 90%
+			max-height: 90%
+			background-color: #ffffff
+			border-radius: 5px
+			box-shadow: 0 10px 30px rgba(0,0,0,.5)
+			+vcenter
+		&-title
+			padding: 10px 40px 10px 10px
+			font-size: 26px
+			color: #000000
+			font-weight: 700
+			text-align: left
+			text-transform: uppercase
+			border-bottom: 1px solid #9c9c9c
+		&-close
+			cursor: pointer
+			position: absolute
+			top: 15px
+			right: 15px
+		&-content
+			padding: 10px
+		&-footer
+			padding: 20px 10px
+			background-color: #eeeeee
+			border-top: 1px solid #9c9c9c
+			+pie-clearfix
+		&-cancel
+			float: right
+			padding: 7px 20px
+			font-size: 16px
+			color: #000000
+			background-color: #ffffff
+	&__maps
+		width: 100%
+		height: 360px
+		
+.user
+	text-align: center
+	&__image
+		overflow: hidden
+		width: 270px
+		height: 270px
+		border-radius: 50%
+	&__img
+		width: 100%
+	&__name
+		margin-top: 20px
+		font-size: 18px
+		color: #000000
+		font-weight: 700
+		text-transform: uppercase
+	&__desc
+		margin-top: 7px
+		
+
+/* ===================================
+	 Method Page
+	 =================================== */
+.secrets
+	padding-top: 150px
+	padding-bottom: 150px
+	background: #fff url('../img/bg/secrets-bg.jpg') center center no-repeat
+	background-size: cover
+	&__h2
+		color: #ffffff
+	&__subtitle
+		margin-top: 10px
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		max-width: 1140px
+		font-size: 20px
+		color: #ffffff
+		text-transform: uppercase
+		+r(1023)
+			font-size: 16px
+		
+.numbers
+	padding-top: 40px
+	padding-bottom: 40px
+	&__row
+		+pie-clearfix
+	&__col
+		float: left
+		width: 33.33%
+		text-align: center
+		+r(767)
+			width: 100%
+	&__number
+		position: relative
+		font-size: 100px
+		color: #93c83d
+		font-weight: 700
+		+r(1023)
+			font-size: 50px
+		+r(767)
+			font-size: 35px
+		&:before
+			content: ''
+			position: absolute
+			bottom: -10px
+			left: 0
+			right: 0
+			margin-left: auto
+			margin-right: auto
+			width: 100px
+			height: 4px
+			background-color: #f0f0f0
+	&__text
+		margin-top: 50px
+		max-width: 360px
+		margin-left: auto
+		margin-right: auto
+		color: #000000
+		text-transform: uppercase
+		+r(1023)
+			font-size: 14px
+		+r(767)
+			margin-top: 20px
+			margin-bottom: 50px
+			max-width: 320px
+		
+.statistics
+	padding-top: 40px
+	padding-bottom: 70px
+	background-color: #f0f0f0
+	&__h3
+		max-width: 960px
+		margin-left: auto
+		margin-right: auto
+		color: #222222
+	&__row
+		+pie-clearfix
+		& + &
+			margin-top: 30px
+	&__col
+		float: left
+		width: 50%
+		+pie-clearfix
+		&:first-child
+			background-color: #ffffff
+		+r(767)
+			width: 100%
+			margin-bottom: 30px
+	&__subcol
+		float: left
+		height: 70px
+		font-size: 35px
+		color: #ffffff
+		text-align: center
+		line-height: 70px
+		font-weight: 700
+		background-color: #93c83d
+		& + &
+			background-color: #ffffff
+		&_50
+			overflow: hidden
+			width: 0
+			transition: all 2s
+			&.is-active
+				width: 50%
+			& + &
+				width: 50%
+		&_70
+			overflow: hidden
+			width: 0
+			transition: all 2s
+			&.is-active
+				width: 70%
+		&_30
+			width: 30%
+	&__text
+		margin-top: 10px
+		padding-left: 20px
+		color: #000000
+		line-height: 26px
+		text-transform: uppercase
+		+r(1023)
+			margin-top: 0
+			font-size: 14px
+			line-height: 20px
+		+r(767)
+			padding-left: 0
+			text-align: center
+		
+.health
+	overflow: hidden
+	padding-top: 40px
+	+r(1439)
+		padding-bottom: 40px
+	&__h3
+		max-width: 840px
+		margin-left: auto
+		margin-right: auto
+	&__subtitle
+		color: #000000
+		text-transform: uppercase
+		text-align: center
+	&__content
+		width: 1440px
+		margin-left: auto
+		margin-right: auto
+		margin-top: 30px
+		text-align: center
+		background: url('../img/bg/circle-bg.png') center 70px no-repeat
+		+r(1439)
+			background: none
+	&__image
+		position: relative
+		&-img
+			max-width: 100%
+		&-text
+			position: absolute
+			bottom: -10px
+			text-align: left
+			right: 70px
+			color: #000000
+			max-width: 370px
+			line-height: 24px
+			+r(1439)
+				position: relative
+				bottom: auto
+				max-width: none
+				right: auto
+				text-align: center
+	&__text-center
+		+r(1439)
+			display: none
+	&__man
+		position: relative
+		margin-bottom: -168px
+		+r(1439)
+			display: none
+		&-img
+			max-width: 100%
+	&__point
+		position: absolute
+		z-index: 2
+		width: 25px
+		height: 25px
+		background-color: #ffffff
+		border: 5px solid #f99191
+		border-radius: 50%
+		cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			left: -50px
+			top: -50px
+			width: 100px
+			height: 100px
+			background-color: transparent
+		&-img
+			position: absolute
+			z-index: 1
+			top: 0
+			left: 0
+			right: 0
+			margin-left: auto
+			margin-right: auto
+			opacity: 0
+		&-text
+			pointer-events: none
+			position: absolute
+			opacity: 0
+			transition: all 0.5s
+			&_1
+				top: -70px
+				left: 20px
+			&_2
+				right: 100%
+				bottom: 100%
+			&_3,
+			&_4,
+			&_5,
+			&_6,
+			&_7
+				top: 5px
+				left: 20px
+		&:hover
+			opacity: 0.8
+		&:hover + &-img
+			opacity: 1
+		&:hover &-text
+			opacity: 1
+		&_1
+			left: 49%
+			top: 4%
+		&_2
+			left: 37.5%
+			top: 32%
+		&_3
+			left: 54%
+			top: 31%
+		&_4
+			left: 51%
+			top: 38%
+		&_5
+			left: 48.5%
+			top: 50.5%
+		&_6
+			left: 55.5%
+			top: 55%
+		&_7
+			left: 49.7%
+			top: 68%
+	&__desc
+		position: relative
+		margin-top: 100px
+		margin-bottom: 70px
+		display: inline-block
+		color: #9d9d9d
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: -40px
+			+s('arrow-bot-green')
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			right: -40px
+			+s('arrow-bot-green')
 	
+.unique
+	position: relative
+	padding-top: 150px
+	padding-bottom: 150px
+	background: #fff url('../img/bg/method-bg.png') center center no-repeat
+	background-size: cover
+	&__h2
+		color: #ffffff
+	&__subtitle
+		margin-top: 10px
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		max-width: 1140px
+		font-size: 20px
+		color: #ffffff
+		text-transform: uppercase
+		+r(767)
+			font-size: 16px
+	
+.steps
+	position: relative
+	margin-top: -110px
+	.method__circle
+		width: 200px
+		height: 200px
+		background-color: #93c83d
+		border: 7px solid #fff
+		color: #ffffff
+		&:before
+			left: -120px
+			+s('arrow-right-green')
+	.method__row
+		+r(1023)
+			margin-bottom: 0
+		
+.first
+	padding-top: 40px
+	padding-bottom: 40px
+	&__subtitle
+		max-width: 1080px
+		margin-left: auto
+		margin-right: auto
+		color: #000000
+		text-transform: uppercase
+		text-align: center
+	&__subtitle2
+		margin-top: 30px
+		font-size: 20px
+		color: #93c83d
+		font-weight: 700
+		line-height: 48px
+		text-align: center
+		text-transform: uppercase
+		+r(1023)
+			line-height: 1.4
+	
+.diagnosis
+	margin-top: 50px
+	padding: 0 100px
+	font-size: 0
+	text-align: center
+	+pie-clearfix
+	+r(1439)
+		padding: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin-bottom: 100px
+		width: 33.33%
+		+r(1023)
+			width: 50%
+			margin-bottom: 50px
+		+r(639)
+			width: 100%
+	&__image
+		min-height: 150px
+	&__text
+		max-width: 360px
+		margin-left: auto
+		margin-right: auto
+		font-size: 16px
+		color: #000000
+	&__info
+		max-width: 1080px
+		margin-left: auto
+		margin-right: auto
+		font-size: 16px
+		color: #000000
+		text-align: center
+		text-transform: uppercase
+	
+.second
+	padding-top: 40px
+	background-color: #f0f0f0
+	&__h3
+		color: #010101
+	&__image
+		margin-bottom: 40px
+		text-align: center
+	&__img
+		max-width: 100%
+	&__desc
+		padding: 0 150px
+		+r(1279)
+			padding: 0
+	&__item
+		margin-bottom: 50px
+	&__title
+		text-align: center
+		color: #000
+		font-size: 20px
+		font-weight: 700
+		line-height: 48px
+		text-transform: uppercase
+	&__text
+		color: #000000
+		text-align: center
+	&__row
+		+pie-clearfix
+	&__col
+		float: left
+		width: 50%
+		padding: 0 20px
+		+r(767)
+			width: 100%
+			padding: 0
+		
+.third
+	padding-top: 40px
+	padding-bottom: 40px
+	&__subtitle
+		max-width: 1100px
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		color: #000000
+		text-transform: uppercase
+		+r(1023)
+			font-size: 14px
+
+.empty
+	padding-top: 160px
+	padding-bottom: 160px
+	background: #fff url('../img/bg/empty-bg.png') center center no-repeat
+	background-size: cover
+	+pie-clearfix
+	+r(1023)
+		padding-top: 100px
+		padding-bottom: 100px
+	&__text
+		max-width: 720px
+		float: right
+		font-size: 20px
+		color: #ffffff
+		font-weight: 400
+		line-height: 26px
+		text-transform: uppercase
+		+r(1023)
+			font-size: 16px
+		
+.reason
+	padding: 40px 100px
+	font-size: 0
+	text-align: center
+	+r(1439)
+		padding-left: 0
+		padding-right: 0
+	&__item
+		display: inline-block
+		width: 33.33%
+		padding: 0 50px
+		margin-bottom: 100px
+		vertical-align: top
+		+r(1439)
+			padding: 0 10px
+			margin-bottom: 50px
+		+r(767)
+			width: 50%
+		+r(479)
+			width: 100%
+	&__image
+		min-height: 150px
+	&__text
+		font-size: 16px
+		color: #000000
+		+r(1023)
+			font-size: 14px
+		
+.coach
+	padding-bottom: 120px
+	.method__circle
+		width: 200px
+		height: 200px
+		background-color: #93c83d
+		border: 7px solid #fff
+		color: #ffffff
+		+r(1399)
+			display: block
+			margin: 30px auto
+		&:before
+			left: -120px
+			+s('arrow-right-green')
+			+r(1399)
+				display: none
+				content: none
+	.method__number
+		font-size: 60px
+	.method__text
+		margin-top: 10px
+		padding: 0 10px
+		font-size: 16px
+		line-height: 21px
+	&__quote
+		margin-left: auto
+		margin-right: auto
+		max-width: 1020px
+		text-align: center
+		+olga
+		color: #93c83d
+		font-size: 50px
+		font-weight: 400
+		line-height: 60px
+		+r(1023)
+			font-size: 40px
+			line-height: 1.4
+		+r(767)
+			font-size: 30px
+		+r(479)
+			font-size: 24px
+			margin-top: -50px
+			margin-bottom: -50px
+		
+.priority
+	padding-top: 180px
+	padding-bottom: 180px
+	background: #fff url('../img/bg/priority-bg.jpg') center center no-repeat
+	background-size: cover
+	+r(1023)
+		padding-top: 100px
+		padding-bottom: 100px
+
+.approach
+	padding-top: 40px
+	padding-bottom: 75px
+	color: #000000
+	text-align: center
+	&__row
+		margin-top: 100px
+		+pie-clearfix
+		+r(1023)
+			margin-top: 50px
+	&__col
+		float: left
+		padding: 0 30px
+		width: 33.33%
+		margin-bottom: 60px
+		+r(1023)
+			padding: 0 10px
+			font-size: 14px
+		+r(767)
+			width: 100%
+	&__image
+		min-height: 160px
+	&__info
+		margin-left: auto
+		margin-right: auto
+		max-width: 1110px
+	
+.training
+	padding-top: 40px
+	padding-bottom: 200px
+	&__subtitle
+		font-size: 21px
+		color: #000000
+		text-align: center
+	
+.cards
+	margin-top: 80px
+	font-size: 0
+	text-align: center
+	&__card
+		display: inline-block
+		margin-bottom: 70px
+		padding: 0 20px
+		vertical-align: top
+		width: 280px
+		text-align: center
+		
+.card
+	&__image
+		overflow: hidden
+		width: 180px
+		height: 180px
+		margin-left: auto
+		margin-right: auto
+		border-radius: 50%
+	&__img
+		width: 100%
+	&__name
+		margin-top: 5px
+		font-size: 18px
+		color: #000000
+		text-transform: uppercase
+		font-weight: 700
+	&__info
+		font-size: 12px
+		color: #bfbfbf
+	&__spec
+		font-size: 16px
+		color: #000000
+	&__btn
+		display: block
+		margin-top: 10px
+		margin-left: auto
+		margin-right: auto
+		width: 180px
+		height: 30px
+		font-size: 18px
+		color: #ffffff
+		text-transform: uppercase
+		line-height: 30px
+		background-color: #93c83d
+		+trs
+		&:hover
+			background-color: darken(#93c83d, 10)
 
 /* ===================================
 	 Other Styles
